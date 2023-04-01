@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import styles from "./Navbar.module.css";
@@ -10,6 +10,19 @@ const Navbar = () => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect (() => {
+    const mediaQuery = window.matchMedia('(max-width:768px)')
+
+    const handleResize = () => {
+      if (!mediaQuery.matches) {
+        setIsOpen(false);
+      };
+    };
+    mediaQuery.addListener(handleResize);
+    return () => mediaQuery.removeListener(handleResize);
+
+  }, []);
 
   return (
     <nav className={styles.nav}>
