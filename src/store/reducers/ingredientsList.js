@@ -1,13 +1,15 @@
-import {ADD_INGREDIENT, REMOVE_INGREDIENT} from '../types';
+import {ADD_INGREDIENT, REMOVE_INGREDIENT} from '@/store/types';
 
-export default function ingredientsList(initialState = new Set(), action) {
+export default function ingredientsList(initialState = [], action) {
+  let copy;
   switch (action.type) {
     case ADD_INGREDIENT:
-      return new Set([...initialState, action.payload]);
+      copy = new Set([...initialState, action.payload]);
+      return [...copy];
     case REMOVE_INGREDIENT:
-      let copy = new Set([...initialState]);
+      copy = new Set([...initialState]);
       copy.delete(action.payload);
-      return copy;
+      return [...copy];
     default:
       return initialState;
   }
