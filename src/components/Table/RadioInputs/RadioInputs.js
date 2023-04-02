@@ -8,8 +8,14 @@ export default function RadioInputs() {
     setSearch(e.target.value)
   }
 
+  function handleSearch(e) {
+    e.preventDefault();
+    // search or filter DB by ingredients list
+    // then set display list of cocktails in store as the result
+  }
+
   return (
-    <form className={styles.radioContainer}>
+    <form className={styles.radioContainer} onSubmit={handleSearch}>
         <label htmlFor='include' className={styles.radio}>
           <input
             style={{ marginRight: "5px" }}
