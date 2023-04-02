@@ -1,0 +1,29 @@
+.container {
+  padding: 1em;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+  padding: 2em;
+}
+
+.item {
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 1rem;
+  flex-basis: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+  .item {
+    flex-basis: 33.33%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .item {
+    flex-basis: 25%;
+  }
+}
