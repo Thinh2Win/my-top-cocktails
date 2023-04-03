@@ -9,11 +9,6 @@ export default function Table() {
   const ingredients = useSelector(state => state.ingredientsList);
   const dispatch = useDispatch();
 
-  /*
-eventually users will be able to click on a recipe
-and see missing ingredients. should have a button that
-adds missing ingredients into a cart
-  */
   function handleSubmit(e) {
     e.preventDefault();
     dispatch({type: ADD_INGREDIENT, payload: ingredient.toLowerCase()});
@@ -39,7 +34,7 @@ adds missing ingredients into a cart
       <ul className={styles.list}>
         {ingredients.map(item => <li className={styles.item} onClick={() => handleDelete(item)} key={item}>{item}</li>)}
       </ul>
-      <RadioInputs />
+      <RadioInputs ingredients={ingredients}/>
     </div>
   )
 }

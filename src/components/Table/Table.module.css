@@ -1,11 +1,12 @@
 .container {
   padding: 1em;
+  background-color: darkslategray;
+  width: 50%;
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
-  max-width: 50%;
   padding-left: 2rem;
 }
 

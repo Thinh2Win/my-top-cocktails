@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './RadioInputs.module.css';
+import { UPDATE_DISPLAY } from '@/store/types';
 
-export default function RadioInputs() {
+export default function RadioInputs({ingredients}) {
   const [search, setSearch] = useState('include');
+  const dispatch = useDispatch();
 
   function handleChange(e) {
     setSearch(e.target.value)
@@ -10,12 +13,13 @@ export default function RadioInputs() {
 
   function handleSearch(e) {
     e.preventDefault();
-    // search or filter DB by ingredients list
-    // then set display list of cocktails in store as the result
+    let params = ingredients.join(',');
+    if (!params.length) return;
+    dispatch({type: UPDATE_DISPLAY, payload: ingredients});
   }
 
   return (
-    <form className={styles.radioContainer} onSubmit={handleSearch}>
+    <form className={styles.container} onSubmit={handleSearch}>
         <label htmlFor='include' className={styles.radio}>
           <input
             style={{ marginRight: "5px" }}

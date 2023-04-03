@@ -1,8 +1,7 @@
-.radioContainer {
+.container {
   display: flex;
   align-items: center;
   padding-top: 1rem;
-  max-width: 50%;
 }
 
 .radio {
