@@ -1,7 +1,44 @@
 .container {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  margin: 1rem;
+}
+
+.card {
+  display: flex;
+  padding: 0.5rem;
+  margin: 1rem;
+  flex-direction: column;
+  background-color: darkkhaki;
+  border: 5px;
+  border-style: solid;
+  border-color: darkslategray;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.page {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.page:hover {
+  border-bottom: 5px;
+  border-style: solid;
+}
+
+.pageContainer {
+  align-self: flex-start;
+  margin-left: 1rem;
 }
