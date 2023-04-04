@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './RadioInputs.module.css';
-import { UPDATE_DISPLAY } from '@/store/types';
+import { GET_RECIPES } from '@/store/types';
+import axios from 'axios';
 
 export default function RadioInputs({ingredients}) {
   const [search, setSearch] = useState('include');
@@ -15,7 +16,7 @@ export default function RadioInputs({ingredients}) {
     e.preventDefault();
     let params = ingredients.join(',');
     if (!params.length) return;
-    dispatch({type: UPDATE_DISPLAY, payload: ingredients});
+    dispatch({type: GET_RECIPES, payload: {ingredients, search}});
   }
 
   return (

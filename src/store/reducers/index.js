@@ -1,8 +1,9 @@
 
-import { combineReducers } from 'redux'
-import ingredientsList from './ingredientsList.js'
+import { combineReducers } from 'redux';
+import ingredientsList from './ingredientsList';
+import updateDisplay from './updateDisplay';
 
 export default combineReducers({
   ingredientsList,
-
+  updateDisplay
 });
