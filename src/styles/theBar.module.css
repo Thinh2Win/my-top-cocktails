@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.page {
+  background-color: #1B263B;
+  min-height: 100vh;
+}
