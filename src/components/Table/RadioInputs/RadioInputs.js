@@ -30,7 +30,7 @@ export default function RadioInputs({ingredients}) {
             checked={search === 'include'}
             onChange={handleChange}
           />
-          include
+          Include
         </label>
         <label htmlFor='filter' className={styles.radio}>
           <input
@@ -41,7 +41,7 @@ export default function RadioInputs({ingredients}) {
             checked={search === 'filter'}
             onChange={handleChange}
           />
-          filter
+          Filter
         </label>
         <button type='submit' className={styles.button}>Search</button>
       </form>
