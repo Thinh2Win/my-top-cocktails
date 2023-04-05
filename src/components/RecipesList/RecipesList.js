@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
+import { capitalizeString } from '@/helpers/misc';
 import styles from './RecipesList.module.css';
 import { useSelector } from 'react-redux';
 
@@ -163,7 +164,6 @@ export default function RecipesList() {
       <div className={styles.container}>
         {recipes.slice((0 + ((page - 1) * 10)), (10 + ((page - 1) * 10))).map((recipe, idx) => (
           <div key={idx} className={styles.card}>
-            {recipe.index}
             <Image
                 className={styles.image}
                 src={recipe.img}
@@ -171,7 +171,7 @@ export default function RecipesList() {
                 width={100}
                 height={100}
             />
-            <h3 className={styles.title}>{recipe.name}</h3>
+            <h2 className={styles.title}>{capitalizeString(recipe.name)}</h2>
           </div>
         ))}
       </div>
