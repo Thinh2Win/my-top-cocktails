@@ -55,8 +55,8 @@ const Navbar = () => {
         <Link className={styles.link} href="/categories">
           Categories
         </Link>
-        <Link className={styles.link} href="/search">
-          Search
+        <Link className={styles.link} href="/theBar">
+          The Bar
         </Link>
         <Link className={styles.link} href="/profile">
             Profile
@@ -71,7 +71,7 @@ const Navbar = () => {
               Categories
             </Link>
             <Link className={styles.link} href="/search">
-              Search
+              The Bar
             </Link>
             <Link className={styles.profileLink} href="/profile">
               Profile
