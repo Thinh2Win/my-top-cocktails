@@ -43,7 +43,7 @@ export default function RadioInputs({ingredients}) {
           />
           Filter
         </label>
-        <button type='submit' className={styles.button}>Search</button>
+        <button type='submit' className={styles.button}>Make Cocktails</button>
       </form>
   )
 }
