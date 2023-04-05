@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import { capitalizeString } from '@/helpers/misc';
+import { useSelector, useDispatch } from 'react-redux';
+import { UPDATE_DISPLAY } from '@/store/types';
 import styles from './RecipesList.module.css';
-import { useSelector } from 'react-redux';
 
 export default function RecipesList() {
+  const dispatch = useDispatch();
   const { recipes, loading, error } = useSelector(state => state.updateRecipeList);
   const [page, setPage] = useState(1);
   const pages = new Array(Math.ceil(recipes.length / 10)).fill(0);
@@ -13,7 +15,7 @@ export default function RecipesList() {
     <>
       <div className={styles.container}>
         {recipes.slice((0 + ((page - 1) * 10)), (10 + ((page - 1) * 10))).map((recipe, idx) => (
-          <div key={idx} className={styles.card}>
+          <div key={idx} onClick={() => dispatch({type: UPDATE_DISPLAY, payload: recipe})} className={styles.card}>
             <Image
                 className={styles.image}
                 src={recipe.img}

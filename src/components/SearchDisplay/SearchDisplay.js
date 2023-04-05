@@ -2,18 +2,12 @@ import React from 'react';
 import styles from './SearchDisplay.module.css';
 import Image from 'next/image';
 import { capitalizeString } from '@/helpers/misc';
-
-const recipe = {
-  name: 'amf',
-  ingredients: '1 oz. (30ml) vodka,1 oz. (30ml) rum,1 oz. (30ml) gin,1 oz. (30ml) tequila,2 oz. (60ml) sweet & sour mix,1 oz. (30ml) lemon lime soda,1 oz. (30ml) blue curacao',
-  preparation: 'add the vodka, rum, tequila, gin, blue curaçao and sweet-and-sour mix to a highball glass with ice and stir.top with Sprite or 7up.garnish with a lemon wedge and preserved cherry, if desired.',
-  img: 'https://images.unsplash.com/photo-1596458598955-cea21e95a20b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-  description: 'A variation of the long island iced tea with blue curacao substituting for the triple sec, and with lemon-lime soda substituting for the cola. Every person from bay area, CA will reminisce Wednesday nights at Dave & Busters.'
-}
+import { useSelector } from 'react-redux';
 
 export default function SearchDisplay() {
   // component displays a clicked cocktail recipe in full detail
   // probably as a prop
+  const recipe = useSelector(state => state.updateDisplay);
   const {name, ingredients, preparation, img, description} = recipe;
 
   return (
