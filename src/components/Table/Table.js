@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from './Table.module.css';
 import { ADD_INGREDIENT, REMOVE_INGREDIENT } from '@/store/types';
+import { capitalizeString } from '@/helpers/misc';
+import styles from './Table.module.css';
 import RadioInputs from './RadioInputs/RadioInputs';
 
 export default function Table() {
@@ -21,18 +22,19 @@ export default function Table() {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='ingredient'>ingredients:</label>
+      <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <label className={styles.formLabel} htmlFor='add ingredients'>Ingredients:</label>
         <input
+          className={styles.formInput}
           type='text'
           id='ingredient'
           value={ingredient}
           onChange={(e) => setIngredient(e.target.value)}
         />
-        <button type='submit'>Add</button>
+        <button className={styles.formButton} type='submit'>Add</button>
       </form>
       <ul className={styles.list}>
-        {ingredients.map(item => <li className={styles.item} onClick={() => handleDelete(item)} key={item}>{item}</li>)}
+        {ingredients.map(item => <li className={styles.item} onClick={() => handleDelete(item)} key={item}>{capitalizeString(item)}</li>)}
       </ul>
       <RadioInputs ingredients={ingredients}/>
     </div>
