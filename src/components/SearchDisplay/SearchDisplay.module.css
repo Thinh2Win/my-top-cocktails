@@ -7,14 +7,14 @@
   border-color: #E0E1DD;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 50%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
 
 .image {
-  width: 60%;
-  height: auto;
   max-height: 400px;
+  max-width: 100%;
   border-radius: 4px;
   align-self: center;
 }

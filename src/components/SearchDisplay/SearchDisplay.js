@@ -16,6 +16,7 @@ export default function SearchDisplay() {
         className={styles.image}
         src={img}
         alt={name}
+        priority={true}
         width={400}
         height={400}
       />
